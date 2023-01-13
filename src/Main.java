@@ -67,9 +67,9 @@ public class Main {
                     d = in.nextInt();
                     try {
                         if (d < 1)
-                            throw new Exception("Неправильные данные");
+                            throw new Exception("Неправильные данные.");
                         if (d > 5)
-                            throw new Exception("Неправильные данные");
+                            throw new Exception("Неправильные данные.");
                     } catch (Exception e) {
                         c = 0;
                         System.out.println(e + "Попробуйте выбрать действие заново");
@@ -138,9 +138,9 @@ public class Main {
                     d = in.nextInt();
                     try {
                         if (d < 1)
-                            throw new Exception("Неправильные данные");
+                            throw new Exception("Неправильные данные.");
                         if (d > 5)
-                            throw new Exception("Неправильные данные");
+                            throw new Exception("Неправильные данные.");
                     } catch (Exception e) {
                         c = 0;
                         System.out.println(e + "Попробуйте выбрать действие заново");

@@ -48,9 +48,9 @@ public class Telephone {
             charge1 = in.nextInt();
             try {
                 if (current_state.getCharge() < 0)
-                    throw new Exception("Процент заряда меньше 0");
+                    throw new Exception("Процент заряда меньше 0.");
                 if (current_state.getCharge() > 100)
-                    throw new Exception("Процент заряда больше 100");
+                    throw new Exception("Процент заряда больше 100.");
             }
             catch (Exception e) {
                 p = 0;
@@ -71,9 +71,9 @@ public class Telephone {
             i = in.nextInt();
             try {
                 if (i < 1)
-                    throw new Exception("Неправильные данные");
+                    throw new Exception("Неправильные данные.");
                 if (i > 2)
-                    throw new Exception("Неправильные данные");
+                    throw new Exception("Неправильные данные.");
             } catch (Exception e) {
                 p = 0;
                 System.out.println(e + "Попробуйте выбрать действие заново");
@@ -88,9 +88,9 @@ public class Telephone {
                 j = in.nextInt();
                 try {
                     if (j < 1)
-                        throw new Exception("Неправильные данные");
+                        throw new Exception("Неправильные данные.");
                     if (j > 2)
-                        throw new Exception("Неправильные данные");
+                        throw new Exception("Неправильные данные.");
                 } catch (Exception e) {
                     p = 0;
                     System.out.println("Попробуйте выбрать действие заново");
@@ -103,7 +103,7 @@ public class Telephone {
                 k = in.nextInt();
                 try {
                     if (k < 0)
-                        throw new Exception("Неправильные данные");
+                        throw new Exception("Неправильные данные.");
                     ;
                 } catch (Exception e) {
                     p = 0;
@@ -138,9 +138,9 @@ public class Telephone {
                 j = in.nextInt();
                 try {
                     if (j < 1)
-                        throw new Exception("Неправильные данные");
+                        throw new Exception("Неправильные данные.");
                     if (j > 2)
-                        throw new Exception("Неправильные данные");
+                        throw new Exception("Неправильные данные.");
                 } catch (Exception e) {
                     p = 0;
                     System.out.println("Попробуйте выбрать действие заново");
@@ -153,7 +153,7 @@ public class Telephone {
                 k = in.nextInt();
                 try {
                     if (k < 0)
-                        throw new Exception("Неправильные данные");
+                        throw new Exception("Неправильные данные.");
                 } catch (Exception e) {
                     p = 0;
                     System.out.println("Попробуйте ввести информацию заново");

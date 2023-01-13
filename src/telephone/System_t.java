@@ -25,8 +25,19 @@ public class System_t {
         System.out.println("Введем информацию о системе");
         System.out.print("Операционная система: ");
         this.opersystem=in.next();
-        System.out.print("Встроенная память(Гб): ");
-        this.internalm=in.nextInt();
+        int p = 0;
+        while (p == 0) {
+            p = 1;
+            System.out.print("Встроенная память(Гб): ");
+            this.internalm = in.nextInt();
+            try {
+                if (internalm < 0)
+                    throw new Exception("Неправильные данные.");
+            } catch (Exception e) {
+                p = 0;
+                System.out.println(e + "Попробуйте ввести информацию заново");
+            }
+        }
         System.out.print("Карта памяти(yes/no): ");
         this.card=in.next();
     }
