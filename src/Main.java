@@ -14,8 +14,22 @@ public class Main {
         Screen screen = new Screen(0, "pixel");
         General_data general_data = new General_data("country", "model", 0);
         int object = 0, c, d = 0, p, i;
-        System.out.println("Вы хотите работать 1 - с одномерным массивом, 2 - с двумерным массивом, 3 - с одним объектом");
-        object = in.nextInt();
+        c=0;
+        while(c==0) {
+            c = 1;
+            System.out.println("Вы хотите работать 1 - с одномерным массивом, 2 - с двумерным массивом, 3 - с одним объектом");
+            object = in.nextInt();
+            try {
+                if (object < 1)
+                    throw new Exception("Неправильные данные.");
+                if (object > 3)
+                    throw new Exception("Неправильные данные.");
+            }
+            catch (Exception e) {
+                c = 0;
+                System.out.println(e + "Попробуйте выбрать действие заново");
+            }
+        }
         if (object == 1) {
             Telephone spisok1[] = new Telephone[2];
             for (i = 0; i < 2; i++) {
@@ -25,16 +39,42 @@ public class Main {
             }
             int ext = 0, w = 0;
             while (ext == 0) {
-                System.out.println("Выберите с каким объектом хотите работать");
-                w = in.nextInt();
+                c=0;
+                while(c==0) {
+                    c = 1;
+                    System.out.println("Выберите с каким объектом хотите работать");
+                    w = in.nextInt();
+                    try {
+                        if (w < 1)
+                            throw new Exception("Неправильные данные.");
+                        if (w > 2)
+                            throw new Exception("Неправильные данные.");
+                    } catch (Exception e) {
+                        c = 0;
+                        System.out.println(e + "Попробуйте выбрать действие заново");
+                    }
+                }
                 w--;
-                System.out.println("Выберите действие, которое хотите совершить:");
-                System.out.println("1.Вывод информации");
-                System.out.println("2.Зарядить телефон");
-                System.out.println("3.Изменить данные памяти");
-                System.out.println("4.Ввод новых данных");
-                System.out.println("5.Выход");
-                d = in.nextInt();
+                c = 0;
+                while (c == 0) {
+                    c = 1;
+                    System.out.println("Выберите действие, которое хотите совершить:");
+                    System.out.println("1.Вывод информации");
+                    System.out.println("2.Зарядить телефон");
+                    System.out.println("3.Изменить данные памяти");
+                    System.out.println("4.Ввод новых данных");
+                    System.out.println("5.Выход");
+                    d = in.nextInt();
+                    try {
+                        if (d < 1)
+                            throw new Exception("Неправильные данные");
+                        if (d > 5)
+                            throw new Exception("Неправильные данные");
+                    } catch (Exception e) {
+                        c = 0;
+                        System.out.println(e + "Попробуйте выбрать действие заново");
+                    }
+                }
                 if (d == 1)
                     spisok1[w].display();
                 if (d == 2) {
@@ -66,20 +106,46 @@ public class Main {
             }
             int ext = 0;
             while (ext == 0) {
-                System.out.println("Выберите с каким объектом хотите работать");
-                i = in.nextInt();
+                c=0;
+                while(c==0) {
+                    c = 1;
+                    System.out.println("Выберите с каким объектом хотите работать");
+                    i = in.nextInt();
+                    try {
+                        if (i < 1)
+                            throw new Exception("Неправильные данные.");
+                        if (i > 4)
+                            throw new Exception("Неправильные данные.");
+                    } catch (Exception e) {
+                        c = 0;
+                        System.out.println(e + "Попробуйте выбрать действие заново");
+                    }
+                }
                 i--;
                 k = i / 2;
                 if (k == 1)
                     i = i - 2;
                 j = i % 2;
-                System.out.println("Выберите действие, которое хотите совершить:");
-                System.out.println("1.Вывод информации");
-                System.out.println("2.Зарядить телефон");
-                System.out.println("3.Изменить данные памяти");
-                System.out.println("4.Ввод новых данных");
-                System.out.println("5.Выход");
-                d = in.nextInt();
+                c = 0;
+                while (c == 0) {
+                    c = 1;
+                    System.out.println("Выберите действие, которое хотите совершить:");
+                    System.out.println("1.Вывод информации");
+                    System.out.println("2.Зарядить телефон");
+                    System.out.println("3.Изменить данные памяти");
+                    System.out.println("4.Ввод новых данных");
+                    System.out.println("5.Выход");
+                    d = in.nextInt();
+                    try {
+                        if (d < 1)
+                            throw new Exception("Неправильные данные");
+                        if (d > 5)
+                            throw new Exception("Неправильные данные");
+                    } catch (Exception e) {
+                        c = 0;
+                        System.out.println(e + "Попробуйте выбрать действие заново");
+                    }
+                }
                 if (d == 1)
                     spisok2[i][j].display();
                 if (d == 2) {
@@ -105,13 +171,26 @@ public class Main {
             spisok.display();
             int ext = 0;
             while (ext == 0) {
-                System.out.println("Выберите действие, которое хотите совершить:");
-                System.out.println("1.Вывод информации");
-                System.out.println("2.Зарядить телефон");
-                System.out.println("3.Изменить данные памяти");
-                System.out.println("4.Ввод новых данных");
-                System.out.println("5.Выход");
-                d = in.nextInt();
+                c = 0;
+                while (c == 0) {
+                    c = 1;
+                    System.out.println("Выберите действие, которое хотите совершить:");
+                    System.out.println("1.Вывод информации");
+                    System.out.println("2.Зарядить телефон");
+                    System.out.println("3.Изменить данные памяти");
+                    System.out.println("4.Ввод новых данных");
+                    System.out.println("5.Выход");
+                    d = in.nextInt();
+                    try {
+                        if (d < 1)
+                            throw new Exception("Неправильные данные.");
+                        if (d > 5)
+                            throw new Exception("Неправильные данные.");
+                    } catch (Exception e) {
+                        c = 0;
+                        System.out.println(e + "Попробуйте выбрать действие заново");
+                    }
+                }
                 if (d == 1)
                     spisok.display();
                 if (d == 2) {
