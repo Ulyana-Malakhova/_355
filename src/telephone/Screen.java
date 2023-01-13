@@ -19,8 +19,19 @@ public class Screen {
     }
     public void read(Scanner in){
         System.out.println("Введем информацию об экране");
-        System.out.print("Диагональ(дюйм): ");
-        this.diagonal=in.nextDouble();
+        int p = 0;
+        while (p == 0) {
+            p = 1;
+            System.out.print("Диагональ(дюйм): ");
+            this.diagonal = in.nextDouble();
+            try {
+                if (diagonal < 0)
+                    throw new Exception("Неправильные данные.");
+            } catch (Exception e) {
+                p = 0;
+                System.out.println(e + "Попробуйте ввести информацию заново");
+            }
+        }
         System.out.print("Плотность пикселей(ppi): ");
         this.pixel=in.next();
     }
