@@ -23,10 +23,34 @@ public class Current_state {
     }
     public void read(Scanner in){
         System.out.println("Введем информацию о нынешнем состоянии");
-        System.out.print("Заряд(в процентах): ");
-        this.charge=in.nextInt();
-        System.out.print("Свободная память(Гб): ");
-        this.memory=in.nextInt();
+        int p = 0;
+        while (p == 0) {
+            p = 1;
+            System.out.print("Заряд(в процентах): ");
+            this.charge = in.nextInt();
+            try {
+                if (charge < 0)
+                    throw new Exception("Процент заряда меньше 0.");
+                if (charge > 100)
+                    throw new Exception("Процент заряда больше 100.");
+            } catch (Exception e) {
+                p = 0;
+                System.out.println(e + "Попробуйте ввести информацию заново");
+            }
+        }
+        p = 0;
+        while (p == 0) {
+            p = 1;
+            System.out.print("Свободная память(Гб): ");
+            this.memory = in.nextInt();
+            try {
+                if (memory < 0)
+                    throw new Exception("Объем памяти меньше 0.");
+            } catch (Exception e) {
+                p = 0;
+                System.out.println(e + "Попробуйте ввести информацию заново");
+            }
+        }
         System.out.print("Интернет: ");
         this.internet=in.next();
     }
