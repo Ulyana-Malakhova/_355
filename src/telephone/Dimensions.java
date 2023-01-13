@@ -27,14 +27,59 @@ public class Dimensions {
     }
     public void read(Scanner in){
         System.out.println("Введем информацию о параметрах телефона");
-        System.out.print("Ширина(мм): ");
-        this.width=in.nextInt();
-        System.out.print("Высота(мм): ");
-        this.height=in.nextInt();
-        System.out.print("Толщина(мм): ");
-        this.thickness=in.nextInt();
-        System.out.print("Вес(в граммах): ");
-        this.weight=in.nextInt();
+        int p = 0;
+        while (p == 0) {
+            p = 1;
+            System.out.print("Ширина(мм): ");
+            this.width = in.nextInt();
+            try {
+                if (width < 40)
+                    throw new Exception("Неправильные данные.");
+            } catch (Exception e) {
+                p = 0;
+                System.out.println(e + "Попробуйте ввести информацию заново");
+            }
+        }
+        p = 0;
+        while (p == 0) {
+            p = 1;
+            System.out.print("Высота(мм): ");
+            this.height = in.nextInt();
+            try {
+                if (height < 90)
+                    throw new Exception("Неправильные данные.");
+            } catch (Exception e) {
+                p = 0;
+                System.out.println(e + "Попробуйте ввести информацию заново");
+            }
+        }
+        p = 0;
+        while (p == 0) {
+            p = 1;
+            System.out.print("Толщина(мм): ");
+            this.thickness = in.nextInt();
+            try {
+                if (thickness < 7)
+                    throw new Exception("Неправильные данные.");
+            } catch (Exception e) {
+                p = 0;
+                System.out.println("Попробуйте ввести информацию заново");
+            }
+        }
+        p = 0;
+        while (p == 0) {
+            p = 1;
+            System.out.print("Вес(в граммах): ");
+            this.weight = in.nextInt();
+            try {
+                if (weight < 32)
+                    throw new Exception("Неправильные данные.");
+            }
+            catch (Exception e) {
+                p = 0;
+                System.out.println(e+"Попробуйте ввести информацию заново");
+            }
+        }
     }
     public void display(){
         System.out.println("Параметры:");
